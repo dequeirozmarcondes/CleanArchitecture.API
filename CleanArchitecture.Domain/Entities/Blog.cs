@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Domain.Entities
 {
+<<<<<<< HEAD
     public class Blog
+=======
+    internal class Blog
+>>>>>>> b38b5c5ac4e1d307fc303e6288b68252f909c817
     {
         public int Id { get; set; }
         public string? Name { get; set; }
