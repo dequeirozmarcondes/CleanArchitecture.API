@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Application.Services
 {
-    internal interface IBlogService
+    public interface IBlogService
     {
         Task<List<Blog>> GetAllAsync();
         Task<Blog> GetByIdAsync(int id);

@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +8,36 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Application.Services
 {
-    internal class BlogService : IBlogService
+    public class BlogService : IBlogService
     {
-        public Task<Blog> CreateAsync(Blog blog)
+        private readonly IBlogRepository _blogRepository;
+        public BlogService(IBlogRepository blogRepository)
         {
-            throw new NotImplementedException();
+            _blogRepository = blogRepository;
+        }
+        public async Task<Blog> CreateAsync(Blog blog)
+        {
+            return await _blogRepository.CreateAsync(blog);
         }
 
-        public Task<int> DeleteAsync(int id)
+        public async Task<int> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _blogRepository.DeleteAsync(id);
         }
 
-        public Task<List<Blog>> GetAllAsync()
+        public async Task<List<Blog>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _blogRepository.GetAllAsync();
         }
 
-        public Task<Blog> GetByIdAsync(int id)
+        public async Task<Blog> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _blogRepository.GetByIdAsync(id);
         }
 
-        public Task<int> UpdateAsync(int id, Blog blog)
+        public async Task<int> UpdateAsync(int id, Blog blog)
         {
-            throw new NotImplementedException();
+            return await _blogRepository.UpdateAsync(id, blog);
         }
     }
 }
