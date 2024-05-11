@@ -8,5 +8,6 @@ namespace CleanArchitecture.Infrastructure.Data
 {
     internal class BlogDbContext
     {
+        
     }
 }
