@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace CleanArchitecture.Domain.Interface
 {
     public interface IBlogRepository
-
     {
         Task<List<Blog>> GetAllAsync();
         Task<Blog> GetByIdAsync(int id);
